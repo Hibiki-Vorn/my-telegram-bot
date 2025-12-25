@@ -39,7 +39,7 @@ var index_default = {
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({
 							chat_id: chatId,
-							text: `Enter /showapps to open the applet.`
+							text: `Enter /show_apps to open the applet.`
 						})
 					});
 				} else if (text === `/start`) {
