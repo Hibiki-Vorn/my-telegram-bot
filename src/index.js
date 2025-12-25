@@ -15,7 +15,7 @@ var index_default = {
 		console.log("body:", body);
 		if (chatId && text) {
 			try {
-				if (text === `/showapps`) {
+				if (text === `/show_apps`) {
 					await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
@@ -48,7 +48,16 @@ var index_default = {
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({
 							chat_id: chatId,
-							text: `You are all set and you can now use the applet.\nYour chatID is ${chatId}.`
+							text: `You are all set and you can now use the applet.`
+						})
+					});
+				}  else if (text === `/get_chat_id`) {
+					await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({
+							chat_id: chatId,
+							text: `Your chatID is ${chatId}.`
 						})
 					});
 				} else {
